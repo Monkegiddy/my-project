@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkegid Proxy</title>
+    <style>
+        /* Reset some styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* Background and overall glow */
+        body {
+            background-color: #1d1f21;
+            background: linear-gradient(145deg, #3f4044, #2a2d33);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            overflow: hidden;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .glowy-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #2a2d33;
+            animation: glowing 2s infinite alternate;
+            z-index: -1;
+        }
+
+        /* Glowing animation */
+        @keyframes glowing {
+            0% { filter: blur(8px); opacity: 0.8; }
+            100% { filter: blur(10px); opacity: 0.9; }
+        }
+
+        /* Main container */
+        .container {
+            text-align: center;
+            max-width: 80%;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(255, 0, 255, 0.6);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 4rem;
+            color: #aa6ee0;
+            text-shadow: 0 0 20px #ff80ff, 0 0 30px #ff80ff, 0 0 40px #8e4ad7;
+            animation: pulse 1.5s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                text-shadow: 0 0 20px #ff80ff, 0 0 30px #ff80ff, 0 0 40px #8e4ad7;
+            }
+            100% {
+                text-shadow: 0 0 50px #ff80ff, 0 0 70px #ff80ff, 0 0 100px #8e4ad7;
+            }
+        }
+
+        /* Input styling for the proxy */
+        .proxy-input {
+            background: #333;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            width: 100%;
+            max-width: 600px;
+            color: #fff;
+            outline: none;
+            box-shadow: 0 0 8px rgba(255, 0, 255, 0.8);
+            transition: all 0.3s ease;
+        }
+
+        .proxy-input:focus {
+            border: 2px solid #aa6ee0;
+            box-shadow: 0 0 20px rgba(170, 110, 224, 0.9);
+        }
+
+        /* Button styling */
+        .proxy-button {
+            background-color: #aa6ee0;
+            border: none;
+            padding: 15px 30px;
+            color: white;
+            font-size: 1.2rem;
+            margin-top: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(170, 110, 224, 0.7);
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .proxy-button:hover {
+            transform: scale(1.05);
+            background-color: #8e4ad7;
+            box-shadow: 0 0 15px rgba(170, 110, 224, 0.9);
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: #aaa;
+        }
+
+        footer a {
+            color: #aaa;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: #ff80ff;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Glowy Background -->
+    <div class="glowy-background"></div>
+
+    <!-- Main Container for Monkegid Proxy -->
+    <div class="container">
+        <h1>Welcome to Monkegid Proxy</h1>
+
+        <!-- Input Form -->
+        <input class="proxy-input" type="text" placeholder="Enter URL..." />
+
+        <!-- Button -->
+        <button class="proxy-button">Go</button>
+
+        <!-- Footer -->
+        <footer>
+            <p>Powered by <a href="#">Monkegid Proxy</a></p>
+        </footer>
+    </div>
+
+</body>
+</html>
