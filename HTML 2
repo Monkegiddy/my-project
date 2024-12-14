@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkegid Proxy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="glowy-background"></div>
+
+    <!-- Main Container -->
+    <div class="container">
+        <h1>Monkegid Proxy</h1>
+
+        <input id="urlInput" class="proxy-input" type="text" placeholder="Enter URL to proxy..." />
+        
+        <button class="proxy-button" onclick="startProxy()">Go</button>
+
+        <div id="result"></div>
+
+        <footer>
+            <p>Powered by <a href="#">Monkegid Proxy</a></p>
+        </footer>
+    </div>
+
+    <script>
+        // Function to handle proxying
+        function startProxy() {
+            const urlInput = document.getElementById('urlInput').value.trim();
+            if (!urlInput) {
+                alert('Please enter a valid URL!');
+                return;
+            }
+
+            // Construct proxy request URL
+            const proxyUrl = `/proxy?url=${encodeURIComponent(urlInput)}`;
+            fetch(proxyUrl)
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('result').innerHTML = `<div class="proxy-result">${html}</div>`;
+                })
+                .catch(error => {
+                    document.getElementById('result').innerHTML = `<div class="error">Error: ${error.message}</div>`;
+                });
+        }
+    </script>
+
+</body>
+</html>
